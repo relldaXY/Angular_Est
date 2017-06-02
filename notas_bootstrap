@@ -1,0 +1,6 @@
+class="jumbotron" --> faixa cinza em uma dada parte
+class="table table-striped" --> gera uma tabela simples com linhas
+class="form-control" --> bloco para preenchimento, traz uma organizaçao
+class="btn btn-primary btn-block" --> botao bonitinho azul do bootstrap
+<div class="alert alert-danger"> --> alerta em vermelho 
+ 

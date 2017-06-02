@@ -1,0 +1,7 @@
+dentro de <style>
+
+width : 400px; --> largura de alguma coisa
+text-align: center; --> texto no centro
+margin-left : auto; --> margem na esquerda
+margin-right : auto; --> margem na direita
+margin-top : 20px; --> margem do topo

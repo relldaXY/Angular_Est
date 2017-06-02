@@ -1,0 +1,19 @@
+placeholder="Nome" --> preenchimento maroto do html
+
+
+--> caixa de selecao 
+<select class="form-control" ng-model="" ng-options="">
+      <option value="">Selecione...</option>
+</select>
+
+//table
+<table></table>
+th -- header da tabela
+tr -- linha da tab
+td -- refere-se ao interior da tabela
+
+//botao
+<button class="btn btn-primary btn-block" ng-click="adicionarContato(contato)" ng-disabled="contatoForm.$invalid">Adicionar Contato</button>
+
+//entrada tipo texto
+<input class="form-control" type="text" ng-model="contato.nome" placeholder="Nome" ng-required="true" />
