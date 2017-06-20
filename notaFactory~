@@ -1,0 +1,74 @@
+//ideia do uso do service no angular
+
+//criando objetos, pessoas.
+var pedro = {
+	nome: "Pedro",
+	idade: 16
+};
+
+var maria = {
+	nome: "Maria",
+	idade: 18
+};
+
+var dulce = {
+	nome: "Dulce",
+	idade: 34
+};
+
+// isso pode se tornar muito repetitivo e trabalhoso
+
+// então, fazemos a função 
+
+var criarPessoa = function (nome, idade) {
+	return {
+		nome: nome,
+		idade: idade	
+	};
+};
+// pode-se criar a pessoa
+var maria = criarPessoa("Maria", 20);
+
+
+//exemplo aplicado
+//essa factory, atua no modulo "listaTelefonica"
+angular.module("listaTelefonica").factory("contatosAPI", function($http, config){
+    var _getContatos = function() {
+        return $http.get(config.baseUrl + "/contatos");
+    }
+
+    var _saveContato = function(contato) {
+        return $http.post(config.baseUrl +"/contatos", contato);
+    }
+    //retorna objeto
+    
+
+    return {
+        getContatos : _getContatos, //o chamado da funcao é getContatos()
+        saveContato : _saveContato  //o chamado da funcao é setContatos(contato)
+    }
+
+})
+
+
+
+//no controller "listaTelefonicaCtrl" da "listaTelefonica" usa-se a factory. Não pode se esquecer de injetar a factory "contatosAPI" no controller
+
+var carregarContatos = function() {
+	contatosAPI.getContatos().then(function(response) {
+		console.log(response);
+		$scope.contatos = response.data;
+	});				
+};
+
+
+
+
+
+
+
+
+
+
+
+

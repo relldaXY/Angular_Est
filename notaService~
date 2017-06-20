@@ -1,0 +1,48 @@
+//ideia do uso do service no angular
+
+
+//ideia de metodo construtor
+var Pessoa = function(nome, idade) {
+	return {
+		this.nome = nome;
+		this.idade = idade;	
+	};
+};
+
+//instanciar
+var carlos = new Pessoa("Carlos", 34);
+
+ou
+
+var carlos = {};
+Pessoa.call(carlos, "Carlos", 34);
+
+
+
+//usando service
+
+angular.module("listaTelefonica").service("operadorasAPI", function($http, config){
+    this.getOperadoras = function() {
+        return $http.get(config.baseUrl + "/operadoras");
+    }
+});
+
+
+//no controller
+
+var carregarOperadoras = function() {
+	operadorasAPI.getOperadoras().then(function(response) {
+		$scope.operadoras = response.data;
+	});
+};
+
+
+
+
+
+
+
+
+
+
+

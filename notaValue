@@ -1,0 +1,8 @@
+//para configurar valores
+
+angular.module("listaTelefonica").value("config", {
+    baseUrl: "http://localhost:3412"
+
+});
+
+//pode ser usado em outros lugares para substituir, deve-se injetar o config em outros lugares.
